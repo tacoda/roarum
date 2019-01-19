@@ -1,13 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
   author: MyString
   body: MyText
-  votes: 1
+  discussion: one
 
 two:
-  title: MyString
   author: MyString
   body: MyText
-  votes: 1
+  discussion: two

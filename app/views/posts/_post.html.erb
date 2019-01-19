@@ -1,0 +1,15 @@
+<p>
+  <strong>Author:</strong>
+  <%= post.author %>
+</p>
+
+<p>
+  <strong>Post:</strong>
+  <%= post.body %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Post', [post.discussion, post],
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+</p>
