@@ -1,14 +1,19 @@
 <h1>New Post</h1>
 
-<%= form_with scope: :post, local: true do |form| %>
+<%= form_with scope: :post, url: :posts, local: true do |form| %>
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
   </p>
 
   <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
+    <%= form.label :author %><br>
+    <%= form.text_field :author %>
+  </p>
+
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
   </p>
 
   <p>
