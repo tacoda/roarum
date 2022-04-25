@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 set -eou pipefail
+DIR="${0%/*}"
 
-docker-compose run app bundle exec rspec "$@"
+source $DIR/rails test "$@"
