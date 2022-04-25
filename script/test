@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -eou pipefail
+
+docker-compose run app RAILS_ENV=test bundle exec rspec "$@"

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -eou pipefail
+DIR="${0%/*}"
+
+docker-compose build
+source $DIR/start
+source $DIR/rails db:drop &2> /dev/null
+source $DIR/rails db:create
+source $DIR/rails db:migrate
+source $DIR/rails db:seed
+source $DIR/stop

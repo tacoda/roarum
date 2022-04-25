@@ -2,27 +2,75 @@
 
 Roarum is a web forum.
 
-## Working with Docker
+
+## Scripts
+
+**REQUIREMENTS:** The scripts in this repository depend on **Docker**.
+
+### Build the application
 
 ```sh
-# Build the images
-docker-compose build
+# Build the application
+./script/build
+```
 
-# Run the containers in the background
-docker-compose up -d
+### Start the application
 
-# Create the database
-docker-compose run app rails db:create
+```sh
+# Start the application
+./script/start
 
-# Migrate the database
-docker-compose run app rails db:migrate
-
-# Open the development url in a browser
+# View in browser
 open http://localhost:3000/
+```
 
-# Follow the app logs
-docker-compose logs -f app
+### View the logs
 
-# Stop the containers
-docker-compose stop
+```sh
+# View the app logs
+./script/log app
+
+# View the database logs
+./script/log db
+```
+
+### Run tests and audits
+
+```sh
+# Run the specs
+./script/test
+
+# Run a specific spec
+./script/test test/models/comment_test.rb:23
+
+# Run audits and checks
+./script/check
+```
+
+### Run commands
+
+```sh
+# Shell commands must be quoted
+./script/sh 'ls -alh'
+./script/sh 'ls -alh | grep yml'
+
+# Start interactive bash shell
+./script/bash
+
+# Start the rails console
+./script/rails c
+```
+
+### Stop the application
+
+```sh
+# Stop the application
+./script/stop
+```
+
+### Tear down the application
+
+```sh
+# Tear down the application
+./script/destroy
 ```
