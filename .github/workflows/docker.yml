@@ -13,4 +13,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build the Docker image
-        run: ./script/build
+        run: ./script/build-ci
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build the Docker image
+        run: ./script/build-ci
+      - uses: actions/checkout@v3
+      - name: Run Rspec tests
+        run: ./script/test
