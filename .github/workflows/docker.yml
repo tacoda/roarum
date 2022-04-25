@@ -7,21 +7,13 @@ on:
     branches: [main]
 
 jobs:
-  build:
-    name: Build Docker Image
+  test:
+    name: Build and Test
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
       - name: Build the Docker image
         run: ./script/build-ci
-
-  test:
-    name: Run Rspec Tests
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
       - name: Run Rspec tests
         run: ./script/test
