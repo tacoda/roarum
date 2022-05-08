@@ -1,18 +1,22 @@
 <h1>Posts</h1>
 
-<div>
-    <% @posts.each do |post| %>
-        <div>
-            <strong>
-                <%= link_to post.title, post %>
-            </strong>
-            <div>
-                <p>
-                    <%= post.body %>
-                </p>
-            </div>
-        </div>
-        <% end %>
-</div>
+<%= Post.public_count %> posts and counting!
 
-<%= link_to "New Post" , new_post_path %>
+    <div>
+        <% @posts.each do |post| %>
+            <% unless post.archived? %>
+                <div>
+                    <strong>
+                        <%= link_to post.title, post %>
+                    </strong>
+                    <div>
+                        <p>
+                            <%= post.body %>
+                        </p>
+                    </div>
+                </div>
+                <% end %>
+                    <% end %>
+    </div>
+
+    <%= link_to "New Post" , new_post_path %>
